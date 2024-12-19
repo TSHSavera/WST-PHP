@@ -100,6 +100,15 @@
                 </div>
                 <div class="content card">
                     <h3 class="bg-two">View Books</h3>
+                    <input type="text" name="search" id="search" placeholder="Search for a book" />
+                    <div class="search-container">
+                        <button class="bg-five search-btn" data-search="title">Search by Title</button>
+                        <button class="bg-five search-btn" data-search="author">Search by Author</button>
+                        <button class="bg-five search-btn" data-search="category">Search by Category</button>
+                        <button class="bg-five search-btn" data-search="date">Search by Date Published</button>
+                        <button class="bg-five search-btn" data-search="isbn">Search by ISBN</button>
+                        <button class="bg-five search-btn" data-search="clear">Clear</button>
+                    </div>
                     <table class="books-table">
                         <thead class="bg-three">
                             <tr>

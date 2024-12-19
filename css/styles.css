@@ -423,3 +423,30 @@ table button {
   height: auto;
   margin: auto;
 }
+
+#search {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid #ccc;
+  transition: all 0.5s;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  width: 90%;
+  margin: 0 auto 1em auto;
+}
+
+.search-container button {
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}

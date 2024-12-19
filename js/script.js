@@ -502,3 +502,101 @@ archiveBtn.addEventListener('click', () => {
         xhr.send();
     }
 });
+
+
+// Search functionality
+const searchInput = document.querySelector('#search');
+
+// Search btns
+const searchBtns = document.querySelectorAll('.search-btn');
+
+// Add event listeners to the search btns - adjust the table based on the search type and value
+searchBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Get the search value
+        const searchValue = searchInput.value;
+        
+        // Modify the search value based on the search type - get on data-search attribute
+        if (btn.dataset.search == 'date') {
+            // Get all the rows
+            const rows = document.querySelectorAll('.books-table tr');
+            // Loop through the rows
+            rows.forEach(row => {
+                // Get the date
+                const date = row.children[3].textContent;
+                // Check if the date contains the search value
+                if (date.includes(searchValue)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        } else if (btn.dataset.search == 'category') {
+            // Get all the rows
+            const rows = document.querySelectorAll('.books-table tr');
+            // Loop through the rows
+            rows.forEach(row => {
+                // Get the category
+                const category = row.children[2].textContent;
+                // Check if the category contains the search value
+                if (category.includes(searchValue)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        } else if (btn.dataset.search == 'isbn') {
+            // Get all the rows
+            const rows = document.querySelectorAll('.books-table tr');
+            // Loop through the rows
+            rows.forEach(row => {
+                // Get the isbn
+                const isbn = row.children[4].textContent;
+                // Check if the isbn contains the search value
+                if (isbn.includes(searchValue)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        } else if (btn.dataset.search == 'author') {
+            // Get all the rows
+            const rows = document.querySelectorAll('.books-table tr');
+            // Loop through the rows
+            rows.forEach(row => {
+                // Get the author
+                const author = row.children[1].textContent;
+                // Check if the author contains the search value
+                if (author.includes(searchValue)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        } else if (btn.dataset.search == 'title') {
+            // Get all the rows
+            const rows = document.querySelectorAll('.books-table tr');
+            // Loop through the rows
+            rows.forEach(row => {
+                // Get the title
+                const title = row.children[0].textContent;
+                // Check if the title contains the search value
+                if (title.includes(searchValue)) {
+                    row.style.display = 'table-row';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        } else {
+            // Reset the table
+            const rows = document.querySelectorAll('.books-table tr');
+            rows.forEach(row => {
+                row.style.display = 'table-row';
+            });
+        }
+
+        // Show the header row
+        const header = document.querySelector('.books-table thead tr');
+        header.style.display = 'table-row';
+    });
+});
