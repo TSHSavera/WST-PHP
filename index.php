@@ -266,7 +266,7 @@
                         <div class="form-input-container">
                             <label for="image-update">Image:</label>
                             <span>Note: Uploading a new picture will replace the preview!</span>
-                            <input type="file" name="image-update" id="image-update" />
+                            <input type="file" name="image-update" id="image-update" accept="image/*" />
                         </div>
 
                         <div class="form-input-container">
