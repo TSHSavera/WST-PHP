@@ -1,0 +1,425 @@
+/*Page fixes*/
+* {
+	box-sizing: border-box;
+}
+
+::selection {
+	color: white;
+	background-color: #007bff;
+}
+::-webkit-scrollbar {
+	width: 7px;
+	transition: all 0.5s;
+}
+::-webkit-scrollbar-track {
+	width: 7px;
+	background-color: #e6e6e6;
+}
+::-webkit-scrollbar-thumb {
+	width: 7px;
+	border-radius: 5px;
+	background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: grey;
+}
+::-webkit-scrollbar-thumb:active {
+	background-color: #0050cb;
+	border-radius: 0;
+}
+
+body {
+	font-family: "Dongle", sans-serif;
+	line-height: 1.5;
+	margin: 0;
+	text-align: left;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Century Gothic", sans-serif;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: "Century Gothic", sans-serif;
+}
+a {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+div {box-sizing: border-box;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+html {
+	scroll-behavior: smooth;
+}
+/*Element Fixes*/
+.auto-fit-img {
+    object-fit: cover;
+}
+
+/*Color Sets*/
+.bg-one {
+  background-color: #FABC3C;
+  color: #000;
+}
+.bg-two {
+  background-color: #FFB238;
+  color: #000;
+}
+.bg-three {
+  background-color: #F19143;
+}
+.bg-four {
+  background-color: #FF773D;
+  color: white;
+}
+.bg-five {
+  background-color: #F55536;
+  color: white
+}
+
+.color-one {
+  color: #FABC3C;
+}
+.color-two {
+  color: #FFB238;
+}
+.color-three {
+  color: #F19143;
+}
+.color-four {
+  color: #FF773D;
+}
+.color-five {
+  color: #F55536;
+}
+
+/*Fade in*/
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/*Topnav*/
+.header {
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  padding: 1em 3em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+.header-el {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+.header-el button {
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.nav-btn.active {
+  background-color: #F19143!important;
+}
+
+/*Content Body*/
+.grid-container {
+  /* display: grid; */
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  padding: 3em 7em;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.head {
+  padding: 3em 7em 0 7em;
+}
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0em 2em 2em 2em;
+}
+.content h3 {
+  padding: 1em;
+  border-radius: 20px 20px 0 0;
+}
+
+form .form-input-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  margin-bottom: 1em;
+  flex-grow: 1;
+  width: 100%;
+}
+
+input, textarea, select {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  /* width: 100%; */
+  flex-grow: 1;
+  resize: none;
+  font-family: "Century Gothic", sans-serif;
+}
+
+label {
+  font-family: "Century Gothic", sans-serif;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+form button {
+  /* background-color: #007bff; */
+  /* color: white; */
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+/* View books form */
+.view-books-form, .vertical {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+  grid-gap: 1em;
+  padding: 3em 7em 0 7em;
+}
+
+.vertical {
+  display: block;
+}
+
+.vertical .content.card {
+  margin-top: 1em;
+}
+
+table {
+  width: auto;
+  border-collapse: collapse;
+  margin: 1em;
+  margin-top: 0;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 1em;
+}
+
+table button {
+  /* background-color: #007bff; */
+  /* color: white; */
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  width: 100%;
+}
+
+
+
+/* Archive */
+.select-archive-container, .select-update-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  margin-top: 1em;
+}
+
+.select-archive-container select, .select-update-container select {
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Century Gothic", sans-serif;
+  grid-column: span 2;
+}
+
+.select-archive-container button, .select-update-container button {
+  /* background-color: #007bff; */
+  /* color: white; */
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+
+.select-update-container button {
+  grid-column: span 2;
+}
+
+/* Book Info Popup */
+.book-info-popup {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.book-info-popup-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.book-info-popup-content .grid-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1em;
+  align-content: center;
+  justify-content: center;
+}
+
+.book-info-popup-content img {
+  width: auto;
+  height: 100%;
+  max-height: 700px;
+  /* object-fit: cover; */
+  border-radius: 20px;
+}
+
+.close-popup-btn {
+  /* background-color: #007bff; */
+  /* color: white; */
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+/* Popup */
+.popup {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  right: 3%;
+  bottom: 3%;
+  width: 500px;
+  height: auto;
+  overflow: auto;
+  background-color: red;
+  padding: 1em;
+  border-radius: 20px;
+  transition: all 0.75s;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup h2 {
+  margin-bottom: 0;
+}
+
+.popup p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.popup button {
+  border: none;
+  padding: 1em;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+}
+
+
+/* Footer */
+.footer {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 1em 3em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3em;
+}
+
+.form-input-container img {
+  width: 500px;
+  height: auto;
+  margin: auto;
+}
