@@ -600,3 +600,78 @@ searchBtns.forEach(btn => {
         header.style.display = 'table-row';
     });
 });
+
+// Add on click on every images - open the image in a new tab
+const addImagePreview = document.querySelector('.add-preview-image');
+const updateImagePreview = document.querySelector('.update-preview-image');
+
+addImagePreview.addEventListener('click', () => {
+    // Create element to open the image in a new tab
+    const enlargedPreviewContainer = document.createElement('div');
+    const enlargedPreview = document.createElement('img');
+    const closeBtn = document.createElement('button');
+
+    // Add classes
+    enlargedPreviewContainer.classList.add('enlarged-image-preview-overlay');
+    enlargedPreview.classList.add('enlarged-image-preview');
+    closeBtn.classList.add('close-btn');
+    closeBtn.classList.add('bg-five');
+
+    // Add the close button text
+    closeBtn.textContent = 'Close';
+
+    // Add the image src
+    enlargedPreview.src = addImagePreview.src;
+
+    // Add event listener to the close button
+    closeBtn.addEventListener('click', () => {
+        // Animate the popup
+        enlargedPreviewContainer.style.opacity = 0;
+        enlargedPreviewContainer.style.right = '-50%';
+        // Remove the popup from the DOM
+        setTimeout(() => {
+            enlargedPreviewContainer.remove();
+        }, 500);
+    });
+
+    // Append elements
+    enlargedPreviewContainer.appendChild(enlargedPreview);
+    enlargedPreviewContainer.appendChild(closeBtn);
+    document.body.appendChild(enlargedPreviewContainer);
+    
+});
+
+updateImagePreview.addEventListener('click', () => {
+    // Create element to open the image in a new tab
+    const enlargedPreviewContainer = document.createElement('div');
+    const enlargedPreview = document.createElement('img');
+    const closeBtn = document.createElement('button');
+
+    // Add classes
+    enlargedPreviewContainer.classList.add('enlarged-image-preview-overlay');
+    enlargedPreview.classList.add('enlarged-image-preview');
+    closeBtn.classList.add('close-btn');
+    closeBtn.classList.add('bg-five');
+
+    // Add the close button text
+    closeBtn.textContent = 'Close';
+
+    // Add the image src
+    enlargedPreview.src = updateImagePreview.src;
+
+    // Add event listener to the close button
+    closeBtn.addEventListener('click', () => {
+        // Animate the popup
+        enlargedPreviewContainer.style.opacity = 0;
+        enlargedPreviewContainer.style.right = '-50%';
+        // Remove the popup from the DOM
+        setTimeout(() => {
+            enlargedPreviewContainer.remove();
+        }, 500);
+    });
+
+    // Append elements
+    enlargedPreviewContainer.appendChild(enlargedPreview);
+    enlargedPreviewContainer.appendChild(closeBtn);
+    document.body.appendChild(enlargedPreviewContainer);
+});
